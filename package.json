@@ -1,0 +1,15 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "new testing",
+  "main": "index.js",
+  "dependencies": {
+    "electron": "^1.4.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "swapnil",
+  "license": "ISC"
+}

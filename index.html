@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>Encrypto</title>
+    <link rel="stylesheet" href="./css/sweetalert.css" />
+    <script type="text/javascript" src="./javascript/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="./css/demo.css" />
+
+    <link type="text/css" rel="stylesheet" href="./jquery-te-1.4.0.css" />
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="./jquery-te-1.4.0.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+    <p>Preparing for Encrypto</p>
+    <div>
+        <div style="text-align:center;">
+<input type="text" placeholder="Please select a file" id="actual-file" disabled="disabled" />
+<input type="button" value="select a File" id="select-file" />
+<input type="button" value="create a File" id="create-file" />
+<input type="button" value="Encrypt File" id="Encrypt_it" />
+<input type="button" value="Decrypt FIle" id="decrypt_it" />
+
+</div>
+<br><br>
+<center>
+
+    <!------------------------------------------------------------ jQUERY TEXT EDITOR ------------------------------------------------------------>
+
+<textarea name="textarea" id="content-editor" cols="100" rows="25"></textarea>
+
+
+<script>
+	$('.jqte-test').jqte();
+
+	// settings of status
+	var jqteStatus = true;
+	$(".status").click(function()
+	{
+		jqteStatus = jqteStatus ? false : true;
+		$('.jqte-test').jqte({"status" : jqteStatus})
+	});
+
+</script>
+</br>
+    <input type="button" id="save-changes" value="Save changes" />
+    <input type="button" id="delete-file" value="Delete file" />
+</center>
+
+</div>
+<script>
+    require('./app')
+</script>
+
+</body>
+
+
+</html>
