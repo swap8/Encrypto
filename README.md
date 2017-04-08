@@ -21,6 +21,11 @@ Do you write code? are you a programmer? no worries it can easily encrypt and de
 ## Authentication
 This software uses a authentication system where a user has to type his name and password to encrypt and decrypt his files.
 
+## Technology used : 
+PHP , MySQL
+
+## encryption algorithm is written in PHP which uses dynamic position changing algorithm.
+
 ## Enjoy!
 
 
