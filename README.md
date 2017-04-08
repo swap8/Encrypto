@@ -24,8 +24,8 @@ This software uses a authentication system where a user has to type his name and
 ## Technology used : 
 PHP , MySQL
 
-## encryption algorithm is written in PHP which uses dynamic position changing algorithm.
+Encryption algorithm is written in PHP which uses dynamic position changing algorithm.
 
-## Enjoy!
+Enjoy!
 
 
