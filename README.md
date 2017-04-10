@@ -24,6 +24,13 @@ This software uses a authentication system where a user has to type his name and
 ## Technology used : 
 PHP , MySQL
 
+## Authors
+````
+https://github.com/swap8            - Swapnil Naik
+````
+````
+https://github.com/ thermistokles   - Amey More
+````
 Encryption algorithm is written in PHP which uses dynamic position changing algorithm.
 
 Enjoy!
