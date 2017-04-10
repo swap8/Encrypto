@@ -29,7 +29,7 @@ PHP , MySQL
 https://github.com/swap8            - Swapnil Naik
 ````
 ````
-https://github.com/ thermistokles   - Amey More
+https://github.com/thermistokles   - Amey More
 ````
 Encryption algorithm is written in PHP which uses dynamic position changing algorithm.
 
