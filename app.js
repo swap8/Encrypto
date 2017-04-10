@@ -101,31 +101,59 @@ document.getElementById("delete-file").addEventListener('click', function () {
 
 })
 
-  document.getElementById('Encrypt_it').addEventListener('click', function () {
 
-        var request = require('request');
-        var id;
-        var content;
-        content = document.getElementById('content-editor').value;
-        //console.log(content);
-        request("http://localhost/encrypto/encrypto.php?id="+content+"&process=encrypt", function (error, response, body) {
-            if (!error && response.statusCode == 200) {
-                console.log(body) // Show the HTML for the Google homepage.
-                document.getElementById('content-editor').value = body;
-            }
-        })
-
-    });
 
     document.getElementById('decrypt_it').addEventListener('click',function(){
 
-    var request = require('request');
-    var content;
-    content=document.getElementById('content-editor').value;
-        request("http://localhost/encrypto/encrypto.php?id="+content+"&process=decrypt",function(error,response, body){
-      console.log(body);
-      document.getElementById('content-editor').value = body;
-    });
+      swal({
+            title: "Verification",
+            text: "E-mail:",
+            type: "input",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            animation: "slide-from-top",
+            inputPlaceholder: "User-Email"
+        },
+        function(inputValue){
+            if (inputValue === false) return false;
+            if (inputValue === "") {
+                swal.showInputError("Error");
+                return false;
+            }
+            var save_email = inputValue;
+            console.log(save_email);
+            swal({
+                title: "Verification",
+                text: "Password",
+                type: "input",
+                showCancelButton: true,
+                closeOnConfirm: false,
+                animation: "slide-from-top",
+                inputPlaceholder: "Password"
+            },
+            function(inputValue){
+                if (inputValue === false) return false;
+                if (inputValue === "") {
+                    swal.showInputError("E-mail error");
+                    return false;
+                }
+                var request = require('request');
+                var save_password = inputValue;
+                console.log("Email id is : "+save_email+"Password is : "+save_password);
+                var id;
+                var content;
+                content = document.getElementById('content-editor').value;
+                //console.log(content);
+                request("http://localhost/encrypto/encrypto.php?id="+content+"&process=decrypt"+"&email="+save_email+"&password="+save_password, function (error, response, body) {
+                    if (!error && response.statusCode == 200) {
+                        console.log(body) // Show the HTML for the Google homepage.
+                        document.getElementById('content-editor').value = body;
+                    }
+                })
+                swal("Message Sent!", "success");
+            });
+        });
+
 
     });
 
@@ -146,6 +174,8 @@ document.getElementById("delete-file").addEventListener('click', function () {
                 swal.showInputError("Error");
                 return false;
             }
+            var save_email = inputValue;
+            console.log(save_email);
             swal({
                 title: "Verification",
                 text: "Password",
@@ -161,7 +191,20 @@ document.getElementById("delete-file").addEventListener('click', function () {
                     swal.showInputError("E-mail error");
                     return false;
                 }
-                swal("Nice!", "You wrote: " + inputValue, "success");
+                var request = require('request');
+                var save_password = inputValue;
+                console.log("Email id is : "+save_email+"Password is : "+save_password);
+                var id;
+                var content;
+                content = document.getElementById('content-editor').value;
+                //console.log(content);
+                request("http://localhost/encrypto/encrypto.php?id="+content+"&process=encrypt"+"&email="+save_email+"&password="+save_password, function (error, response, body) {
+                    if (!error && response.statusCode == 200) {
+                        console.log(body) // Show the HTML for the Google homepage.
+                        document.getElementById('content-editor').value = body;
+                    }
+                })
+                swal("Message Sent!", "success");
             });
         });
 
