@@ -2,6 +2,7 @@
 
 <head>
     <title>Encrypto</title>
+	<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
     <link rel="stylesheet" href="./css/sweetalert.css" />
     <script type="text/javascript" src="./javascript/sweetalert.min.js"></script>
     <link rel="stylesheet" href="./css/demo.css" />
@@ -15,7 +16,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 <script type="text/javascript" src="editor.js"></script>
-
+<script>if (window.module) module = window.module;</script>
 </head>
 
 <body>
@@ -26,7 +27,7 @@
     <div class="input-group">
 
     </div><!-- /input-group -->
-    <input type="text"class="form-control" placeholder="Please select a file" id="actual-file" disabled="disabled" />
+    <input type="text" class="form-control" placeholder="Please select a file" id="actual-file" disabled="disabled" />
 
   </div><!-- /.col-lg-6 -->
   <div class="col-lg-6">
@@ -41,6 +42,23 @@
 
   </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
+<br>
+	<div>
+<div class="btn-group btn-group-sm" role="group" aria-label="align">
+    <button type="button" class="btn btn-default" aria-label="left"><span class="glyphicon glyphicon-align-left" onclick="left()"></span></button>
+    <button type="button" class="btn btn-default" aria-label="center"><span class="glyphicon glyphicon-align-center" id="center" onclick="center()"></span></button>
+    <button type="button" class="btn btn-default" aria-label="right"><span class="glyphicon glyphicon-align-right" onclick="right()"></span></button>
+    <button type="button" class="btn btn-default" aria-label="justify"><span class="glyphicon glyphicon-align-justify" onclick="justify()"></span></button>
+	<button type="button" class="btn btn-default" aria-label="Bold"><span class="glyphicon glyphicon-bold" onclick="bold()"></span></button>
+    <button type="button" class="btn btn-default" aria-label="Italics"><span class="glyphicon glyphicon-italic" onclick="italic()"></span></button>
+</div>
+
+<div class="btn-group btn-group-sm" role="group" aria-label="basic">
+    
+</div>
+
+
+</div>
 <hr>
 <center>
 
@@ -51,30 +69,7 @@
 <input type="button" class="btn btn-primary btn-sm" value="Encrypt File" id="Encrypt_it" />
 <input type="button" class="btn btn-primary btn-sm" value="Decrypt FIle" id="decrypt_it" />
 
-<div>
-<div class="btn-group btn-group-sm" role="group" aria-label="align">
-    <button type="button" class="btn btn-default" aria-label="left"><span class="glyphicon glyphicon-align-left" onclick="left()"></span></button>
-    <button type="button" class="btn btn-default" aria-label="center"><span class="glyphicon glyphicon-align-center" id="center" onclick="center()"></span></button>
-    <button type="button" class="btn btn-default" aria-label="right"><span class="glyphicon glyphicon-align-right" onclick="right()"></span></button>
-    <button type="button" class="btn btn-default" aria-label="justify"><span class="glyphicon glyphicon-align-justify" onclick="justify()"></span></button>
-</div>
 
-<div class="btn-group btn-group-sm" role="group" aria-label="basic">
-    <button type="button" class="btn btn-default" aria-label="Bold"><span class="glyphicon glyphicon-bold" onclick="bold()"></span></button>
-    <button type="button" class="btn btn-default" aria-label="Italics"><span class="glyphicon glyphicon-italic" onclick="italic()"></span></button>
-</div>
-
-<div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Font <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><button class="font" onclick="serif()">serif</button></li>
-    <li><button class="font" onclick="sans-serif()">Sans-serif</button></li>
-    <li><button class="font" onclick="monospace()"><p>Monospace</button></li>
-  </ul>
-</div>
-</div>
 <script>
 	$('.jqte-test').jqte();
 
@@ -89,7 +84,8 @@
 
 //bold function
 function bold(){
-    $('#content-editor').css({'font-weight':'bold'});
+    $("#content-editor").css({'font-weight':'bold'});
+	
 }
 
 //italics function
@@ -123,10 +119,6 @@ function serif(){
     $('#content-editor').css({'font-family':'serif'});
 }
 
-//serif function
-function sans-serif(){
-    $('#content-editor').css({'font-family':'sans-serif'});
-}
 
 //serif function
 function monospace(){
