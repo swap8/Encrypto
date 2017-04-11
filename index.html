@@ -13,6 +13,9 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<script type="text/javascript" src="editor.js"></script>
+
 </head>
 
 <body>
@@ -47,6 +50,31 @@
 <br>
 <input type="button" class="btn btn-primary btn-sm" value="Encrypt File" id="Encrypt_it" />
 <input type="button" class="btn btn-primary btn-sm" value="Decrypt FIle" id="decrypt_it" />
+
+<div>
+<div class="btn-group btn-group-sm" role="group" aria-label="align">
+    <button type="button" class="btn btn-default" aria-label="left"><span class="glyphicon glyphicon-align-left" onclick="left()"></span></button>
+    <button type="button" class="btn btn-default" aria-label="center"><span class="glyphicon glyphicon-align-center" id="center" onclick="center()"></span></button>
+    <button type="button" class="btn btn-default" aria-label="right"><span class="glyphicon glyphicon-align-right" onclick="right()"></span></button>
+    <button type="button" class="btn btn-default" aria-label="justify"><span class="glyphicon glyphicon-align-justify" onclick="justify()"></span></button>
+</div>
+
+<div class="btn-group btn-group-sm" role="group" aria-label="basic">
+    <button type="button" class="btn btn-default" aria-label="Bold"><span class="glyphicon glyphicon-bold" onclick="bold()"></span></button>
+    <button type="button" class="btn btn-default" aria-label="Italics"><span class="glyphicon glyphicon-italic" onclick="italic()"></span></button>
+</div>
+
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Font <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><button class="font" onclick="serif()">serif</button></li>
+    <li><button class="font" onclick="sans-serif()">Sans-serif</button></li>
+    <li><button class="font" onclick="monospace()"><p>Monospace</button></li>
+  </ul>
+</div>
+</div>
 <script>
 	$('.jqte-test').jqte();
 
@@ -57,6 +85,53 @@
 		jqteStatus = jqteStatus ? false : true;
 		$('.jqte-test').jqte({"status" : jqteStatus})
 	});
+
+
+//bold function
+function bold(){
+    $('#content-editor').css({'font-weight':'bold'});
+}
+
+//italics function
+function italic(){
+    $('#content-editor').css({'font-style':'italic'});
+}
+
+//left function
+function left(){
+    $('#content-editor').css({'text-align':'left'});
+    console.log('aligned left');
+}
+
+//center function
+function center(){
+    $('#content-editor').css({'text-align':'center'});
+}
+
+//rigth function
+function right(){
+    $('#content-editor').css({'text-align':'right'});
+}
+
+//justify function
+function justify(){
+    $('#content-editor').css({'text-align':'justify'});
+}
+
+//serif function
+function serif(){
+    $('#content-editor').css({'font-family':'serif'});
+}
+
+//serif function
+function sans-serif(){
+    $('#content-editor').css({'font-family':'sans-serif'});
+}
+
+//serif function
+function monospace(){
+    $('#content-editor').css({'font-family':'Monospace'});
+}
 
 </script>
 
